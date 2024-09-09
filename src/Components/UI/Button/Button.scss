@@ -1,0 +1,70 @@
+@use "@/assets/styles/variables.scss" as nav; // импорт для переменных
+
+.btn {
+  border: none;
+  border-radius: nav.$radius-small;
+  white-space: nowrap;
+}
+
+.color-green {
+  background-color: nav.$button-color-green;
+  color: nav.$font-lightColor;
+}
+
+.color-white {
+  background-color: nav.$button-color-white;
+  color: nav.$font-darkColor;
+}
+
+.color-neutral {
+  background: none;
+  border: 1px solid nav.$button-border-color;
+  color: nav.$dark-grey;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.size-M {
+  padding: 16px 56px;
+  font-size: nav.$common-text;
+}
+
+.size-L {
+  padding: 16px 0;
+  font-size: nav.$common-text;
+  font-weight: nav.$font-weight-semi-bold;
+  text-align: center;
+}
+
+.size-S {
+  padding: 8px 16px;
+  font-size: nav.$small-text;
+}
+
+.size-XS {
+  padding: 6px 16px;
+  font-size: nav.$small-text;
+}
+
+.breadcrumbs__last-light{
+  color: nav.$font-darkColor;
+  font-weight: nav.$font-weight-medium;
+}
+
+.breadcrumbs__last-dark{
+  color: nav.$font-lightColor;
+  font-weight: nav.$font-weight-medium;
+}
+
+@media (max-width: 725px) {
+  .size-XS{
+    font-size: nav.$burger-menu-s;
+  }
+}
+
+@media (max-width: 480px) {
+  .size-XS{
+    font-size: nav.$burger-menu-xs;
+  }
+}

@@ -1,0 +1,204 @@
+@use "@/assets/styles/variables.scss" as nav; // импорт для переменных
+
+.header {
+  position: relative;
+  padding: 30px 40px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid nav.$border-color-grey;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .nav__menu {
+      &-list {
+        display: flex;
+        gap: 32px;
+        font-weight: nav.$font-weight-medium;
+
+        li {
+          cursor: pointer;
+
+          .nav__menu-link {
+            color: nav.$font-darkColor;
+
+            &:hover {
+              color: nav.$green-color;
+            }
+          }
+
+          .link-dark {
+            color: nav.$font-lightColor;
+          }
+        }
+      }
+    }
+
+    .button__discount {
+      margin-right: 20px;
+      margin-bottom: 12px;
+    }
+  }
+
+  .icons {
+    display: flex;
+    gap: 15px;
+    position: relative;
+
+    .header__icon {
+      position: relative;
+    }
+
+    .quantity {
+      position: absolute;
+      background-color: nav.$green-color;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      font-size: nav.$product-quantity-header;
+      color: nav.$font-lightColor;
+      font-weight: nav.$font-weight-semi-bold;
+    }
+
+    .icon-light {
+      font-size: nav.$icons-size;
+      fill: none;
+      stroke: nav.$font-darkColor;
+      stroke-width: 20px;
+    }
+
+    .icon-dark {
+      font-size: nav.$icons-size;
+      fill: none;
+      stroke: nav.$white-color;
+      stroke-width: 20px;
+    }
+
+    .menu {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .header {
+    padding: 30px 20px 28px;
+
+    .header__content {
+      .nav__menu {
+        &-list {
+          gap: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .header__content {
+      .nav__menu {
+        &-list {
+          gap: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 725px) {
+  .button__discount {
+    display: none;
+  }
+
+  .nav__menu {
+    display: none;
+  }
+
+  .header {
+    padding: 12px 20px;
+
+    .icons {
+      .menu {
+        display: flex;
+
+        .menu-dark {
+          color: nav.$font-lightColor;
+        }
+
+        &__icon {
+          font-size: nav.$icons-size;
+          color: nav.$font-darkColor;
+          z-index: 2;
+        }
+
+        .menu-close {
+          position: fixed;
+          top: 12px;
+          right: 20px;
+        }
+
+        .burger__menu {
+          display: none;
+
+          .nav__menu-list {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            background-color: nav.$bg-color-lightTheme;
+            z-index: 1;
+            padding: 100px 39px 100px 32px;
+            top: -25px;
+            right: -20px;
+            height: 100vh;
+            font-size: nav.$burger-menu-s;
+            font-weight: nav.$font-weight-medium;
+          }
+
+          .nav__menu-dark {
+            background-color: nav.$bg-color-darkTheme;
+          }
+          
+          &__active {
+            display: block;
+            background-color: nav.$bg-modalWindow;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    .icons {
+      .menu {
+        .nav__menu-list {
+          padding: 100px 24px 0 32px;
+          font-size: nav.$burger-menu-xs;
+        }
+      }
+    }
+  }
+}

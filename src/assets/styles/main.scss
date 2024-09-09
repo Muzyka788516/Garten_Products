@@ -1,0 +1,35 @@
+@use "@/assets/styles/variables.scss" as nav; // импорт для переменных 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); //импорт шрифта
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: nav.$font-darkColor;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+body {
+  &.light-theme {
+    background-color: nav.$bg-color-lightTheme;
+    transition: 0.3s linear;
+  }
+
+  &.dark-theme {
+    background-color: nav.$bg-color-darkTheme;
+    transition: 0.3s linear;
+  }
+}

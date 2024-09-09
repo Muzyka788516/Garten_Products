@@ -1,0 +1,26 @@
+@use "@/assets/styles/variables.scss" as nav; // импорт для переменных
+
+.all-products {
+  padding: 40px 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
+    gap: 32px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .all-products {
+    padding: 40px 20px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .all-products {
+    padding: 32px 20px 0;
+  }
+}

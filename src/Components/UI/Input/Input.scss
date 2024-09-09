@@ -1,0 +1,30 @@
+@use "@/assets/styles/variables.scss" as nav; // импорт для переменных 
+
+.input {
+  padding: 16px 32px;
+  font-size: nav.$common-text;
+  border-radius: nav.$radius-small;
+  border: 1px solid;
+}
+
+.sale__form-control {
+  background: none;
+  border-color: nav.$border-color-white;
+
+  &::placeholder {
+    color: nav.$font-lightColor;
+  }
+}
+
+.order__form-control {
+   background-color: nav.$bg-color-white;
+   border-color: nav.$border-color-grey;
+   
+   &::placeholder {
+    color: nav.$font-greyColor;
+  }
+}
+
+.input-dark{
+    background-color: nav.$bg-color-darkTheme;
+  }

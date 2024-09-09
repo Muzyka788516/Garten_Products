@@ -1,0 +1,26 @@
+@use "@/assets/styles/variables.scss" as nav; // импорт для переменных
+
+.sale__products-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .sale__products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(316px, 1fr));
+    gap: 32px;
+  }
+}
+
+
+@media (min-width: 481px) {
+  .adaptive__link{
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .adaptive__link{
+    text-align: center;
+  }
+}
